@@ -36,7 +36,7 @@ async def chat_endpoint(request: ChatRequest):
         raise HTTPException(status_code=400, detail="Sakon wayam ne.")
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-2.0-flash",
             contents=request.message,
         )
         return {"status": "success", "app": "Fata AI", "user_id": request.user_id, "response": response.text}
